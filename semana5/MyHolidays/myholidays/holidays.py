@@ -11,7 +11,7 @@ class MyCalendar:
         for param in args:
             if isinstance(param, date):
                 self.datas.append(param)
-            elif type(param) == str:
+            elif type(param) is str:
                 try:
                     data = datetime.strptime(param, '%d/%m/%Y').date()
                     self.datas.append(data)
@@ -23,7 +23,7 @@ class MyCalendar:
     def check_holiday(self, data):
         if isinstance(data, date):
             return data in self.datas
-        elif type(data) == str:
+        elif type(data) is str:
             try:
                 data = datetime.strptime(data, '%d/%m/%Y').date()
                 return data in self.datas
