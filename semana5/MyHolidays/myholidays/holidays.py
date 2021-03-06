@@ -23,7 +23,7 @@ class MyCalendar:
     def check_holiday(self, data):
         if isinstance(data, date):
             return data in self.datas
-        elif isinstance(data, str):
+        elif type(data) == str:
             try:
                 data = datetime.strptime(data, '%d/%m/%Y').date()
                 return data in self.datas
